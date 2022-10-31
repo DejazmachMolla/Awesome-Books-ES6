@@ -21,7 +21,6 @@ export default class Book {
     this.contactSection = document.getElementById('contact');
   }
 
-  /* Display an added book to the UI */
   display = () => {
     this.awesomeBooks.innerHTML += `
   
@@ -33,20 +32,13 @@ export default class Book {
       `;
   }
 
-  /*
-Filter out a removed book from an array of books contianed in each list item
-- add new array of books (with one less book) to the local storage
-*/
   remove = (id) => {
     this.books = this.books.filter((book) => book.id !== id);
     localStorage.setItem('booksLocalStorage', JSON.stringify(this.books));
     this.removeBorderFromBooks();
   }
 
-  /*
-Initialize remove button event listeners
-*/
-  removeDom = () => {
+  addEventListenersForRemoveButtons = () => {
     this.allBtnSelector = this.awesomeBooks.querySelectorAll('.btn');
     this.allBtnSelector.forEach((btn) => {
       btn.addEventListener('click', (e) => {
@@ -57,33 +49,20 @@ Initialize remove button event listeners
     });
   }
 
-  /*
-Add a book object to the books array
-- display the book on the UI
-- set booksLocalStorage variable for preserving books array during reload
-- clear currentTitle and currentAuthor variables so that those will
-  not be showing up after a book object has already been added
-- initialize event listeners for the buttons created when adding new books
-*/
-
   add = (bookObj) => {
     if (this.books.length === 0) {
       document.getElementById('no-book').style.display = 'none';
-      // document.getElementById('added-book').style.textAlign = "center";
     }
     this.display();
     this.books.push(bookObj);
     localStorage.setItem('booksLocalStorage', JSON.stringify(this.books));
     localStorage.setItem('currentTitle', '');
     localStorage.setItem('currentAuthor', '');
-    this.removeDom();
+    this.addEventListenersForRemoveButtons();
     this.addBorderToBooks();
     this.loadListPage();
   }
 
-  /*
-Create a Book object and add it to the array
-*/
   formSubmitted = () => {
     this.formSelector.onsubmit = (e) => {
       e.preventDefault();
@@ -98,17 +77,12 @@ Create a Book object and add it to the array
         author: author.value,
         id: Date.now().toString(),
       };
-      // this.add(new Book(title.value, author.value, Date.now().toString()));
       book.add(bookObj);
       e.target.title.value = '';
       e.target.author.value = '';
     };
   }
 
-  /*
-Listen to the keyup event of the title input box and add it
-to the local storage to use it when reloading
-*/
   addEventListenerForTitle = () => {
     this.titleSelector.addEventListener('keyup', (e) => {
       e.preventDefault();
@@ -116,10 +90,6 @@ to the local storage to use it when reloading
     });
   }
 
-  /*
-Listen to the keyup event of the author input box and add it
-to the local storage to use it when reloading
-*/
   addEventListenerForAuthor = () => {
     this.authorSelector.addEventListener('keyup', (e) => {
       e.preventDefault();
@@ -140,7 +110,7 @@ to the local storage to use it when reloading
 
     document.getElementById('title').value = this.title;
     document.getElementById('author').value = this.author;
-    this.removeDom(this.awesomeBooks);
+    this.addEventListenersForRemoveButtons(this.awesomeBooks);
     this.removeBorderFromBooks();
   }
 
