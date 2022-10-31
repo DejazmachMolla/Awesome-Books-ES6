@@ -1,62 +1,43 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Awesome-Books-ES6
 
-> Description the project.
+> This project is a book listing project implemented using ES6. In addition, the Luxon library is used to display the current date and time on the web page.
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
-
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
+- JavaScript, ES6
+- Luxon
 
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+**To use this project, you can simply follow the following steps**
 
 
 To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
+- Clone the project on your local machine
+- Run `npm install` on the root directory
+- Open `index.html`
+- Install live-server
+- Open app with live-server
 
 
 ## Authors
 
 👤 **Author1**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@githubhandle](https://github.com/DejazmachMolla)
+- Twitter: [@twitterhandle](https://twitter.com/DJATSS)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/dejazmach-molla-027aabaa/)
 
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/DejazmachMolla/Awesome-Books-ES6/issues).
 
 ## Show your support
 
@@ -64,9 +45,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Thanks for the Luxon team
 
 ## 📝 License
 
