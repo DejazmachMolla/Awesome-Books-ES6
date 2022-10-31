@@ -22,7 +22,7 @@ export default class Book {
   }
 
   /* Display an added book to the UI */
-  display() {
+  display = () => {
     this.awesomeBooks.innerHTML += `
   
       <li id="${this.id}">
@@ -37,7 +37,7 @@ export default class Book {
 Filter out a removed book from an array of books contianed in each list item
 - add new array of books (with one less book) to the local storage
 */
-  remove(id) {
+  remove = (id) => {
     this.books = this.books.filter((book) => book.id !== id);
     localStorage.setItem('booksLocalStorage', JSON.stringify(this.books));
     this.removeBorderFromBooks();
@@ -46,7 +46,7 @@ Filter out a removed book from an array of books contianed in each list item
   /*
 Initialize remove button event listeners
 */
-  removeDom() {
+  removeDom = () => {
     this.allBtnSelector = this.awesomeBooks.querySelectorAll('.btn');
     this.allBtnSelector.forEach((btn) => {
       btn.addEventListener('click', (e) => {
@@ -66,7 +66,7 @@ Add a book object to the books array
 - initialize event listeners for the buttons created when adding new books
 */
 
-  add(bookObj) {
+  add = (bookObj) => {
     if (this.books.length === 0) {
       document.getElementById('no-book').style.display = 'none';
       // document.getElementById('added-book').style.textAlign = "center";
@@ -84,7 +84,7 @@ Add a book object to the books array
   /*
 Create a Book object and add it to the array
 */
-  formSubmitted() {
+  formSubmitted = () => {
     this.formSelector.onsubmit = (e) => {
       e.preventDefault();
       const { title, author } = e.target;
@@ -109,7 +109,7 @@ Create a Book object and add it to the array
 Listen to the keyup event of the title input box and add it
 to the local storage to use it when reloading
 */
-  addEventListenerForTitle() {
+  addEventListenerForTitle = () => {
     this.titleSelector.addEventListener('keyup', (e) => {
       e.preventDefault();
       localStorage.setItem('currentTitle', e.target.value);
@@ -120,14 +120,14 @@ to the local storage to use it when reloading
 Listen to the keyup event of the author input box and add it
 to the local storage to use it when reloading
 */
-  addEventListenerForAuthor() {
+  addEventListenerForAuthor = () => {
     this.authorSelector.addEventListener('keyup', (e) => {
       e.preventDefault();
       localStorage.setItem('currentAuthor', e.target.value);
     });
   }
 
-  populateBooksOnload() {
+  populateBooksOnload = () => {
     this.loadListPage();
     Book.startTime();
     this.books.forEach((book) => {
@@ -144,7 +144,7 @@ to the local storage to use it when reloading
     this.removeBorderFromBooks();
   }
 
-  removeBorderFromBooks() {
+  removeBorderFromBooks = () => {
     if (this.books.length === 0) {
       this.awesomeBooks.style.border = 'none';
       document.getElementById('no-book').style.display = 'block';
@@ -153,11 +153,11 @@ to the local storage to use it when reloading
     }
   }
 
-  addBorderToBooks() {
+  addBorderToBooks = () => {
     this.awesomeBooks.style.border = '2px solid black';
   }
 
-  addEventListenerForNavigation() {
+  addEventListenerForNavigation = () => {
     this.navigationSelector.addEventListener('click', (e) => {
       e.preventDefault();
       if (e.target && e.target.textContent === 'List') {
@@ -176,17 +176,15 @@ to the local storage to use it when reloading
     });
   }
 
-  loadListPage() {
+  loadListPage = () => {
     this.addSection.style.display = 'block';
     this.formSection.style.display = 'none';
     this.contactSection.style.display = 'none';
   }
 
-  static getDateTimeString() {
-    return DateTime.now().toLocaleString(DateTime.DATETIME_MED);
-  }
+  static getDateTimeString = () => DateTime.now().toLocaleString(DateTime.DATETIME_MED)
 
-  static startTime() {
+  static startTime = () => {
     setInterval(() => {
       document.getElementById('timer').innerHTML = Book.getDateTimeString();
     },
