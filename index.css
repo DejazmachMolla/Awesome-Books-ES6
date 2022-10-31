@@ -1,0 +1,189 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100%;
+}
+
+.navigation {
+  padding: 1rem;
+  border: 2px solid black;
+  margin: 0.5rem;
+}
+
+.navigation > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.navigation > ul li {
+  list-style: none;
+}
+
+.added-book ul li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.navigation > ul li:not(:first-child) {
+  margin-left: 1rem;
+  border-right: 2px solid black;
+  padding-right: 1rem;
+}
+
+.navigation > ul li:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+.navigation > ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.time > p {
+  float: right;
+  margin-right: 0.5rem;
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem 3rem 0 3rem;
+  width: 100vw;
+}
+
+.added-book,
+.form-container {
+  width: 100%;
+}
+
+.added-book h1,
+.form-container h1,
+.contact-info h1 {
+  text-align: center;
+  margin-bottom: 0.6rem;
+}
+
+.added-book ul {
+  border: 2px solid black;
+  padding: 1rem 0;
+}
+
+.added-book ul,
+form {
+  width: 70vw;
+  margin: auto;
+}
+
+.form-container button {
+  float: right;
+  padding: 0.25em 1em;
+}
+
+.added-book ul li > h2 {
+  font-size: 14px;
+}
+
+.added-book ul li > button {
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.added-book ul li:nth-child(2n + 1) {
+  background-color: grey;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+/* .form-container > h1 {
+  margin-bottom: 0.6rem;
+} */
+
+form > * {
+  border: 2px solid black;
+}
+
+form > input {
+  width: 100%;
+  padding: 0.5em;
+}
+
+.button-shadow {
+  box-shadow: 3px 4px;
+}
+
+.added-book h3 {
+  text-align: center;
+  width: 30vw;
+  margin: 0 auto;
+  color: red;
+  animation: zoom-in-zoom-out 1s ease-out infinite;
+}
+
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(1, 1);
+  }
+
+  50% {
+    transform: scale(1.5, 1.5);
+  }
+
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+.contact,
+.book {
+  margin-bottom: 4.5rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100vw;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0.5rem;
+  margin: 0 0.5rem 0 0.5rem;
+  border: 2px solid black;
+  width: calc(100% - 16px);
+  padding: 1rem;
+  background-color: white;
+  z-index: 5;
+}
+
+.content-cover {
+  position: fixed;
+  bottom: 0;
+  height: 0.6rem;
+  width: 100%;
+  background-color: white;
+  z-index: 4;
+}
