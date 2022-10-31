@@ -1,4 +1,6 @@
-export class Book {
+import { DateTime } from '../node_modules/luxon/build/es6/luxon.js';
+
+export default class Book {
   constructor() {
     this.awesomeBooks = document.querySelector('#awesome-books');
     this.formSelector = document.querySelector('form');
@@ -181,13 +183,7 @@ to the local storage to use it when reloading
   }
 
   static getDateTimeString() {
-    const dateObj = new Date();
-    const month = dateObj.getUTCMonth(); // months from 0-11
-    const day = dateObj.getUTCDate();
-    const year = dateObj.getUTCFullYear();
-    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    const dateString = `${months[month]} ${day}th ${year}, ${dateObj.getHours()}:${dateObj.getMinutes()}:${dateObj.getSeconds()}`;
-    return dateString;
+    return DateTime.now().toLocaleString(DateTime.DATETIME_MED);
   }
 
   static startTime() {

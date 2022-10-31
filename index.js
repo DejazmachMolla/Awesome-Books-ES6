@@ -1,4 +1,4 @@
-import {Book} from './modules/book.js';
+import Book from './modules/book.js';
 
 /*
 Display books, title and author variables when the window loads
