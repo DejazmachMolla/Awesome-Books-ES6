@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Awesome-Books-ES6
 
 > This project is a book listing project implemented using ES6. In addition, the Luxon library is used to display the current date and time on the web page.
 
