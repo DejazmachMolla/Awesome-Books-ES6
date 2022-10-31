@@ -20,8 +20,8 @@ To get a local copy up and running follow these simple example steps.
 - Clone the project on your local machine
 - Run `npm install` on the root directory
 - Open `index.html`
-- Install live-server
-- Open app with live-server
+- Run the server using `parcel index.html`
+- Open app on the url on which the server is running
 
 
 ## Authors
